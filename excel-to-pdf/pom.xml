@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org-nabeels</groupId>
+	<artifactId>excel-to-pdf</artifactId>
+	<version>1.0.0</version>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<!-- parse input arguments -->
+			<groupId>com.beust</groupId>
+			<artifactId>jcommander</artifactId>
+			<version>1.78</version>
+		</dependency>
+
+		<dependency>
+			<!-- read .xls -->
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+
+		<dependency>
+			<!-- read .xlsx -->
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+
+		<dependency>
+			<!-- write .pdf -->
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itextpdf</artifactId>
+			<version>5.5.13.1</version>
+		</dependency>
+
+		<dependency>
+			<!-- write .pdf -->
+			<groupId>com.itextpdf.tool</groupId>
+			<artifactId>xmlworker</artifactId>
+			<version>5.5.9</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<appendAssemblyId>false</appendAssemblyId>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>org.nabeels.main.Main</mainClass>
+						</manifest>
+					</archive>
+					<finalName>${project.artifactId}-${project.version}-full</finalName>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
