@@ -25,7 +25,7 @@
 			<!-- read .xls -->
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>4.1.0</version>
+			<version>4.1.2</version>
 		</dependency>
 
 		<dependency>
