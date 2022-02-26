@@ -46,7 +46,7 @@
 			<!-- write .pdf -->
 			<groupId>com.itextpdf.tool</groupId>
 			<artifactId>xmlworker</artifactId>
-			<version>5.5.9</version>
+			<version>5.5.13.3</version>
 		</dependency>
 	</dependencies>
 
